@@ -37,11 +37,30 @@ public class Main {
 
         // calculate average of absences
         double avg = average(absences);
-        System.out.println("The average number of absences is " + avg);
+        System.out.println("\nThe average number of absences is " + avg);
 
         // calculate the sum
 
+
+        // Percentage of the number of fewer then 3 absences and perfect absences
+        double checkAttendance = numOfAbsences(absences,3);
+        System.out.println("The number of absences fewer then 3: " + checkAttendance);
+
     }
+
+    private static double numOfAbsences(ArrayList<Integer> absences, int numOfElements ) {
+        int countAbsences = 0;
+        for (int i = 0; i < absences.size(); i++) {
+            if(numOfElements < absences.get(i) ){
+                countAbsences++;
+            }
+        }
+        return countAbsences;
+
+
+
+    }
+
 
     private static double average(ArrayList<Integer> absences) {
         return (double) sum(absences)/ absences.size();
