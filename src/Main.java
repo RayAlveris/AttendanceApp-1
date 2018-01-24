@@ -23,7 +23,7 @@ public class Main {
 
 
         }
-        System.out.println("The elements are: " + absences);
+        System.out.println("\nThe elements are: " + absences);
 
         //Number of students with perfect attendance
         int countPerfect = 0;
@@ -50,12 +50,20 @@ public class Main {
 
     private static double numOfAbsences(ArrayList<Integer> absences, int numOfElements ) {
         int countAbsences = 0;
+        int countPerfect = 0;
+
         for (int i = 0; i < absences.size(); i++) {
-            if(numOfElements < absences.get(i) ){
+            if(numOfElements > absences.get(i) ){
                 countAbsences++;
+                if(absences.get(i) == 0){
+                    countPerfect++;
+                }
+
             }
+
+
         }
-        return countAbsences;
+        return (double) countPerfect/countAbsences ;
 
 
 
