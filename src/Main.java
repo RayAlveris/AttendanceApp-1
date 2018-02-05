@@ -52,7 +52,7 @@ public class Main {
         System.out.println("Enter number of absences: ");
         int studAbsences = sc.nextInt();
         ArrayList<Integer> indexesOfStudents = indexOfStud(absences, studAbsences);
-        System.out.println("The index: " + indexesOfStudents + " had number of: " + studAbsences + "absences");
+        System.out.println("The index: " + indexesOfStudents + " had number of: " + studAbsences + " absences");
 
 
     }
