@@ -54,7 +54,21 @@ public class Main {
         ArrayList<Integer> indexesOfStudents = indexOfStud(absences, studAbsences);
         System.out.println("The index: " + indexesOfStudents + " had number of: " + studAbsences + " absences");
 
+        // students have FE'd the course
+        ArrayList<Integer> FEstudents = numOfStudentsFE(absences);
+        System.out.println("The students who FE'd: " + FEstudents);
 
+
+    }
+
+    private static ArrayList<Integer> numOfStudentsFE(ArrayList<Integer> absences) {
+        ArrayList<Integer> num = new ArrayList<>();
+        int classMeet = 3;
+        for (int i = 0; i < absences.size(); i++) {
+            if(absences.get(i) >= classMeet );
+                num.add(i);
+        }
+        return num;
     }
 
     private static ArrayList<Integer> indexOfStud (ArrayList<Integer> array, int studAbsences) {
