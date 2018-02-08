@@ -58,7 +58,7 @@ public class Main {
         ArrayList<Integer> FEStudents = numOfStudentsFE(absences, 3);
         System.out.println("The students who FE'd: " + FEStudents);
 
-        //the average of only the non-FE'd absences
+        //percentage of the students have FE'd the course
         double nonFED = avgFED(FEStudents, absences);
         System.out.printf("Formatted %d divided by %d is %.2f%%", FEStudents.size(), absences.size(), nonFED);
 
