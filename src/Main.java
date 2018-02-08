@@ -55,15 +55,15 @@ public class Main {
         System.out.println("The index: " + indexesOfStudents + " had number of: " + studAbsences + " absences");
 
         // students have FE'd the course
-        ArrayList<Integer> FEStudents = numOfStudentsFE(absences,3);
+        ArrayList<Integer> FEStudents = numOfStudentsFE(absences, 3);
         System.out.println("The students who FE'd: " + FEStudents);
 
         //the average of only the non-FE'd absences
-        double nonFED = avgFED(FEStudents,absences);
-        System.out.printf("Formatted %d divided by %d is %.2f%%", FEStudents.size(),absences.size(), nonFED );
+        double nonFED = avgFED(FEStudents, absences);
+        System.out.printf("Formatted %d divided by %d is %.2f%%", FEStudents.size(), absences.size(), nonFED);
 
 
-
+    }
 
     private static double avgFED(ArrayList<Integer>absences,ArrayList<Integer>FEStudents){
         double avg= (double)FEStudents.size()/(double)absences.size();
