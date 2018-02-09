@@ -49,13 +49,13 @@ public class Main {
         System.out.println("The number of absences fewer then 3: " + checkAttendance);
 
         //index(es) of the students who had a specified number of absences.
-        System.out.println("Enter number of absences: ");
+        System.out.print("Enter number of absences: ");
         int studAbsences = sc.nextInt();
         ArrayList<Integer> indexesOfStudents = indexOfStud(absences, studAbsences);
         System.out.println("The index: " + indexesOfStudents + " had number of: " + studAbsences + " absences");
 
         // students have FE'd the course
-        System.out.println("Enter in how many time the class meets in a week: ");
+        System.out.print("\nEnter in how many time the class meets in a week: ");
         int classMeet = sc.nextInt();
         ArrayList<Integer> FEStudents = numOfStudentsFE(absences,classMeet);
         System.out.println("The students who FE'd: " + FEStudents);
@@ -64,9 +64,9 @@ public class Main {
         double nonFED = percentageFED(FEStudents, absences);
         System.out.printf("Formatted %d divided by %d is %.2f%%", FEStudents.size(), absences.size(), nonFED);
 
-        // todo average of the number of students on non FE'd absences
+        // average of the number of students on non FE'd absences
         double avgFE = averageOfStudentsWhoFED(absences,classMeet);
-        System.out.println();
+        System.out.println("\nAverage of non FE'd students is : " + avgFE);
 
 
     }
@@ -74,8 +74,12 @@ public class Main {
     private static double averageOfStudentsWhoFED(ArrayList<Integer>array,int classMeet){
         ArrayList<Integer> studentsNonFEd = new ArrayList<>();
         for (int i = 0; i < array.size(); i++) {
-            if
+            if(array.get(i)<= classMeet){
+                studentsNonFEd.add(array.get(i));
+            }
         }
+
+        return average(studentsNonFEd);
     }
 
     private static double percentageFED(ArrayList<Integer>absences,ArrayList<Integer>FEStudents){
@@ -112,14 +116,9 @@ public class Main {
                 if (absences.get(i) == 0) {
                     countPerfect++;
                 }
-
             }
-
-
         }
         return (double) countPerfect / countAbsences;
-
-
     }
 
 
