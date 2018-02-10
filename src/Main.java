@@ -68,8 +68,26 @@ public class Main {
         double avgFE = averageOfStudentsWhoFED(absences,classMeet);
         System.out.println("\nAverage of non FE'd students is : " + avgFE);
 
+        //Add number[x] to any absences greater than number[Y].
+        System.out.println("\nEnter the absences you want change:  ");
+        int absencesToChange = sc.nextInt();
+        System.out.println("Enter how much you want to add: ");
+        int amountToAdd = sc.nextInt();
+        addToAbsences(absences,absencesToChange,amountToAdd);
+        System.out.println("Update Absences: " + absences);
+
+
 
     }
+
+    public static void addToAbsences(ArrayList<Integer>array,int absencesToChange,int amountToAdd){
+        for (int i = 0; i < array.size(); i++) {
+            if(array.get(i) + amountToAdd >= 0){
+                array.set(i , array.get(i) + amountToAdd);
+            }
+        }
+    }
+
 
     private static double averageOfStudentsWhoFED(ArrayList<Integer>array,int classMeet){
         ArrayList<Integer> studentsNonFEd = new ArrayList<>();
