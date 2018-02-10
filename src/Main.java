@@ -79,6 +79,8 @@ public class Main {
         //Sort the absences using a library function..
         Collections.sort(absences);
 
+        
+
     }
 
     public static void addToAbsences(ArrayList<Integer> array, int absencesToChange, int amountToAdd) {
