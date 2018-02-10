@@ -86,7 +86,7 @@ public class Main {
         System.out.println("The num of unique absence are: " + unique);
 
         //How many of each absence value are there
-        int numEachAbsence = countEachAbsences(absences);
+        Map<Integer, Integer> numEachAbsence = countEachAbsences(absences);
         System.out.println("Each absence map: " + numEachAbsence);
 
         //Sort the absences using a user-defined sort function.
@@ -105,16 +105,17 @@ public class Main {
             for (int j = 0; j < array.size(); j++) {
                 if (array.get(i) > array.get(j)) {
                     int temp = array.get(i);
-                    array.set(i, array.get(j)){
+                    array.set(i, array.get(j)); {
                         array.set(j, temp);
+
                     }
+
+
                 }
-
-
             }
         }
-
     }
+
 
     public static void shuffleAbsences(ArrayList<Integer> array) {
         Random rand = new Random();
@@ -127,12 +128,17 @@ public class Main {
     }
 
 
-
-    public static int countEachAbsences(ArrayList<Integer> absences) {
+    public static Map countEachAbsences(ArrayList<Integer> absences) {
         Map<Integer, Integer> absencesCounterMap = new HashMap<>();
-        for (int key: absences) {
-            if(!absencesCounterMap())
+        for (int key : absences) {
+            if (!absencesCounterMap.containsKey(key)) {
+                absencesCounterMap.put(key, 1);
+            } else {
+                int value = absencesCounterMap.get(key) + 1;
+                absencesCounterMap.put(key, value);
+            }
         }
+        return absencesCounterMap;
     }
 
 
