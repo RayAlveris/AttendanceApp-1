@@ -105,7 +105,7 @@ public class Main {
             for (int j = 0; j < array.size(); j++) {
                 if (array.get(i) > array.get(j)) {
                     int temp = array.get(i);
-                    array.set(i, array.get(j)) {
+                    array.set(i, array.get(j)){
                         array.set(j, temp);
                     }
                 }
