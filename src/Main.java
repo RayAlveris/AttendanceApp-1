@@ -78,8 +78,14 @@ public class Main {
 
         //Sort the absences using a library function..
         Collections.sort(absences);
+        System.out.println("\nThe absences sorted: " + absences);
 
-        
+        //Shuffle the absences using a library function.
+        Collections.shuffle(absences);
+        System.out.println("The absences shuffle: " + absences);
+
+
+
 
     }
 
