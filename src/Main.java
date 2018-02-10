@@ -57,7 +57,7 @@ public class Main {
         // students have FE'd the course
         System.out.print("\nEnter in how many time the class meets in a week: ");
         int classMeet = sc.nextInt();
-        ArrayList<Integer> FEStudents = numOfStudentsFE(absences,classMeet);
+        ArrayList<Integer> FEStudents = numOfStudentsFE(absences, classMeet);
         System.out.println("The students who FE'd: " + FEStudents);
 
         //percentage of the students have FE'd the course
@@ -65,37 +65,38 @@ public class Main {
         System.out.printf("Formatted %d divided by %d is %.2f%%", FEStudents.size(), absences.size(), nonFED);
 
         // average of the number of students on non FE'd absences
-        double avgFE = averageOfStudentsWhoFED(absences,classMeet);
+        double avgFE = averageOfStudentsWhoFED(absences, classMeet);
         System.out.println("\nAverage of non FE'd students is : " + avgFE);
 
         //Add number[x] to any absences greater than number[Y].
-        System.out.println("\nEnter the absences you want change:  ");
+        System.out.print("\nEnter the absences you want change:  ");
         int absencesToChange = sc.nextInt();
-        System.out.println("Enter how much you want to add: ");
+        System.out.print("Enter how much you want to add: ");
         int amountToAdd = sc.nextInt();
-        addToAbsences(absences,absencesToChange,amountToAdd);
+        addToAbsences(absences, absencesToChange, amountToAdd);
         System.out.println("Update Absences: " + absences);
 
         //Sort the absences using a library function.
 
 
-
-
     }
 
-    public static void addToAbsences(ArrayList<Integer>array,int absencesToChange,int amountToAdd){
+    public static void addToAbsences(ArrayList<Integer> array, int absencesToChange, int amountToAdd) {
         for (int i = 0; i < array.size(); i++) {
-            if(array.get(i) + amountToAdd >= 0){
-                array.set(i , array.get(i) + amountToAdd);
-            }
+            if (array.get(i) + amountToAdd >= 0)
+                array.set(i, array.get(i) + amountToAdd);
+            if(array.get(i) > 15)
+                array.set(i,15);
+            if(array.get(i) < 0)
+                array.set(i,0);
         }
     }
 
 
-    private static double averageOfStudentsWhoFED(ArrayList<Integer>array,int classMeet){
+    private static double averageOfStudentsWhoFED(ArrayList<Integer> array, int classMeet) {
         ArrayList<Integer> studentsNonFEd = new ArrayList<>();
         for (int i = 0; i < array.size(); i++) {
-            if(array.get(i)<= classMeet){
+            if (array.get(i) <= classMeet) {
                 studentsNonFEd.add(array.get(i));
             }
         }
@@ -103,24 +104,24 @@ public class Main {
         return average(studentsNonFEd);
     }
 
-    private static double percentageFED(ArrayList<Integer>absences,ArrayList<Integer>FEStudents){
-        double avg= (double)FEStudents.size()/(double)absences.size();
+    private static double percentageFED(ArrayList<Integer> absences, ArrayList<Integer> FEStudents) {
+        double avg = (double) FEStudents.size() / (double) absences.size();
         return avg;
     }
 
     private static ArrayList<Integer> numOfStudentsFE(ArrayList<Integer> absences, int classMeet) {
         ArrayList<Integer> num = new ArrayList<>();
         for (int i = 0; i < absences.size(); i++) {
-            if(absences.get(i) >= classMeet );
-                num.add(i);
+            if (absences.get(i) >= classMeet) ;
+            num.add(i);
         }
         return num;
     }
 
-    private static ArrayList<Integer> indexOfStud (ArrayList<Integer> array, int studAbsences) {
+    private static ArrayList<Integer> indexOfStud(ArrayList<Integer> array, int studAbsences) {
         ArrayList<Integer> indexes = new ArrayList<>();
         for (int i = 0; i < array.size(); i++) {
-            if(array.get(i)==(studAbsences)){
+            if (array.get(i) == (studAbsences)) {
                 indexes.add(i);
             }
         }
