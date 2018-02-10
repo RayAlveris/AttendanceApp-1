@@ -1,9 +1,6 @@
 import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -84,9 +81,20 @@ public class Main {
         Collections.shuffle(absences);
         System.out.println("The absences shuffle: " + absences);
 
+        //Find How many absences are unique.
+        Set<Integer> unique = uniqueAbsences(absences);
+        System.out.println("The num of unique absence are: " + unique);
 
 
 
+
+    }
+    public static Set uniqueAbsences(ArrayList<Integer> array){
+        Set<Integer> unique = new HashSet<>();
+        for (int i = 0; i < array.size(); i++) {
+            unique.add(array.get(i));
+        }
+        return unique;
     }
 
     public static void addToAbsences(ArrayList<Integer> array, int absencesToChange, int amountToAdd) {
