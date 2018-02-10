@@ -77,7 +77,7 @@ public class Main {
         System.out.println("Update Absences: " + absences);
 
         //Sort the absences using a library function.
-
+        Collections.sort(absences);
 
     }
 
