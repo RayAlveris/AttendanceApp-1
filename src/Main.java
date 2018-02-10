@@ -85,11 +85,58 @@ public class Main {
         Set<Integer> unique = uniqueAbsences(absences);
         System.out.println("The num of unique absence are: " + unique);
 
+        //How many of each absence value are there
+        int numEachAbsence = countEachAbsences(absences);
+        System.out.println("Each absence map: " + numEachAbsence);
 
+        //Sort the absences using a user-defined sort function.
+        sortAbsences(absences);
+        System.out.println("The user-defined: " + absences);
+
+        //Shuffle the absences using a user-defined shuffle() function.
+        shuffleAbsences(absences);
+        System.out.println("The user-defined shuffle: " + absences);
 
 
     }
-    public static Set uniqueAbsences(ArrayList<Integer> array){
+
+    public static void sortAbsences(ArrayList<Integer> array) {
+        for (int i = 0; i < array.size(); i++) {
+            for (int j = 0; j < array.size(); j++) {
+                if (array.get(i) > array.get(j)) {
+                    int temp = array.get(i);
+                    array.set(i, array.get(j)) {
+                        array.set(j, temp);
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+    public static void shuffleAbsences(ArrayList<Integer> array) {
+        Random rand = new Random();
+        for (int i = 0; i < array.size(); i++) {
+            int index = rand.nextInt(array.size());
+            int temp = array.get(index);
+            array.set(index, array.get(i));
+            array.set(i, temp);
+        }
+    }
+
+
+
+    public static int countEachAbsences(ArrayList<Integer> absences) {
+        Map<Integer, Integer> absencesCounterMap = new HashMap<>();
+        for (int key: absences) {
+            if(!absencesCounterMap())
+        }
+    }
+
+
+    public static Set uniqueAbsences(ArrayList<Integer> array) {
         Set<Integer> unique = new HashSet<>();
         for (int i = 0; i < array.size(); i++) {
             unique.add(array.get(i));
@@ -101,10 +148,10 @@ public class Main {
         for (int i = 0; i < array.size(); i++) {
             if (array.get(i) + amountToAdd >= 0)
                 array.set(i, array.get(i) + amountToAdd);
-            if(array.get(i) > 15)
-                array.set(i,15);
-            if(array.get(i) < 0)
-                array.set(i,0);
+            if (array.get(i) > 15)
+                array.set(i, 15);
+            if (array.get(i) < 0)
+                array.set(i, 0);
         }
     }
 
