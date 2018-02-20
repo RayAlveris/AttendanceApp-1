@@ -102,10 +102,22 @@ public class Main {
         System.out.println("Names in the ArrayList: "+ studentsNames);
 
         //Shuffle the names using a user-defined shuffle function.
-        shuffleAbsences(studentsNames);
+        shuffleStudents(studentsNames);
+        System.out.println("The user-defined shuffle: " + studentsNames);
+
+        //
 
 
 
+    }
+    public static void shuffleStudents(ArrayList<String> array) {
+        Random rand = new Random();
+        for (int i = 0; i < array.size(); i++) {
+            int index = rand.nextInt(array.size());
+            String temp = array.get(index);
+            array.set(index, array.get(i));
+            array.set(i, temp);
+        }
     }
 
     public  static ArrayList<String> storeNames(){
