@@ -105,11 +105,19 @@ public class Main {
         shuffleStudents(studentsNames);
         System.out.println("The user-defined shuffle: " + studentsNames);
 
-        //
-
+        //Using the 5 names, create another list that has the same size as the absences list.
+        ArrayList<String>studentsNamesWithUpDatedSize = storeNames2();
 
 
     }
+
+    public static ArrayList<String>storeNames2(ArrayList<Integer>absences){
+        ArrayList<String>studentsNamesWithUpDatedSize = new ArrayList<>();
+        for()
+
+
+    }
+
     public static void shuffleStudents(ArrayList<String> array) {
         Random rand = new Random();
         for (int i = 0; i < array.size(); i++) {
