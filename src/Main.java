@@ -99,7 +99,7 @@ public class Main {
 
         //ArrayList of 5 distinct names
         ArrayList<String>studentsNames = storeNames();
-        System.out.println("Names in the ArrayList: "+ studentsNames);
+        System.out.println("\nNames in the ArrayList: "+ studentsNames);
 
         //Shuffle the names using a user-defined shuffle function.
         shuffleStudents(studentsNames);
@@ -113,9 +113,18 @@ public class Main {
 
     public static ArrayList<String>storeNames2(ArrayList<Integer>absences){
         ArrayList<String>studentsNamesWithUpDatedSize = new ArrayList<>();
-        for()
+        Random rand = new Random();
+        for (int i = 0; i <absences.size() ; i++) {
+           int element = rand.nextInt(absences.get(i));
+            studentsNamesWithUpDatedSize.add(element);
+
+        }
 
 
+
+
+
+return studentsNamesWithUpDatedSize;
     }
 
     public static void shuffleStudents(ArrayList<String> array) {
