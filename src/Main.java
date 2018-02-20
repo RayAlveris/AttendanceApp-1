@@ -97,8 +97,25 @@ public class Main {
         shuffleAbsences(absences);
         System.out.println("The user-defined shuffle: " + absences);
 
+        //ArrayList of 5 distinct names
+        ArrayList<String>studentsNames = storeNames();
+        System.out.println("Names in the ArrayList: "+ studentsNames);
+
+
 
     }
+
+    public  static ArrayList<String> storeNames(){
+        ArrayList<String> studentsNames = new ArrayList<>();
+        studentsNames.add("Ray");
+        studentsNames.add("Ty");
+        studentsNames.add("Semaj");
+        studentsNames.add("Darcy");
+        studentsNames.add("Marsha");
+
+        return studentsNames;
+    }
+
 
     public static void sortAbsences(ArrayList<Integer> array) {
         for (int i = 0; i < array.size(); i++) {
