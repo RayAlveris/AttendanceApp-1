@@ -106,7 +106,7 @@ public class Main {
         System.out.println("The user-defined shuffle: " + studentsNames);
 
         //Using the 5 names, create another list that has the same size as the absences list.
-        ArrayList<String>studentsNamesWithUpDatedSize = storeNames2();
+        ArrayList<String>studentsNamesWithUpDatedSize = storeNames2(absences);
 
 
     }
