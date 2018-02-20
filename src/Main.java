@@ -101,6 +101,9 @@ public class Main {
         ArrayList<String>studentsNames = storeNames();
         System.out.println("Names in the ArrayList: "+ studentsNames);
 
+        //Shuffle the names using a user-defined shuffle function.
+        shuffleAbsences(studentsNames);
+
 
 
     }
