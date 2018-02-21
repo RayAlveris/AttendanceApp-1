@@ -119,12 +119,7 @@ public class Main {
             studentsNamesWithUpDatedSize.add(element);
 
         }
-
-
-
-
-
-return studentsNamesWithUpDatedSize;
+        return studentsNamesWithUpDatedSize;
     }
 
     public static void shuffleStudents(ArrayList<String> array) {
