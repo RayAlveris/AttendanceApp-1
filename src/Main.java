@@ -119,6 +119,7 @@ public class Main {
             studentsNamesWithUpDatedSize.add(element);
 
         }
+        
         return studentsNamesWithUpDatedSize;
     }
 
